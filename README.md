@@ -57,9 +57,9 @@ For more information on the full capabilities see the documentation [here](https
 
     b. `mdb` - the [official MariaDB Community server image](https://hub.docker.com/_/mariadb).
 
-    c. `todo_client` - a React.js web application that provides a user interface for managing tasks (on a todo list).
+    c. `todo_client` - a [React.js web application](app/client) that provides a user interface for managing tasks (on a todo list).
 
-    d. `todo_api` - a Node.js application programming interface (API) that exposes REST endpoints for managing data within a database using the [official MongoDB Node Driver](https://docs.mongodb.com/drivers/node/current/).
+    d. `todo_api` - a [Node.js application](app/api) programming interface (API) that exposes REST endpoints for managing data within a database using the [official MongoDB Node Driver](https://docs.mongodb.com/drivers/node/current/).
 
     **Note**: You can confirm that the `docker-compose up` command has successfully pulled the images and created the containers by executing the following command:
 
