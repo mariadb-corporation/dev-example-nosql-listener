@@ -53,9 +53,9 @@ For more information on the full capabilities see the documentation [here](https
 
     The command above will acquire Docker images and create four container instances.
 
-    a. `mxs` - the official MariaDB MaxScale image.
+    a. `mxs` - the [official MariaDB MaxScale image](https://hub.docker.com/r/mariadb/maxscale).
 
-    b. `mdb` - the official MariaDB Community server image.
+    b. `mdb` - the [official MariaDB Community server image](https://hub.docker.com/_/mariadb).
 
     c. `todo_client` - a React.js web application that provides a user interface for managing tasks (on a todo list).
 
