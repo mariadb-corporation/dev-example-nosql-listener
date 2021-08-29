@@ -5,6 +5,9 @@ import AddTask from './AddTask';
 import close from '../images/close.png';
 
 export default class Dashboard extends Component {
+
+    todo_api_url = "http://127.0.0.1:8080/api/tasks";
+
     constructor(props) {
         super(props);
         this.state = {
@@ -42,7 +45,8 @@ export default class Dashboard extends Component {
     async addTask(description) {
         this.toggleAddTaskModal();
         var task = {
-            description: description
+            description: description,
+            completed: false
         };
         await this.saveTask(task);
         await this.loadTasks();
@@ -51,7 +55,7 @@ export default class Dashboard extends Component {
     async saveTask(task) {
         var res = null;
         if (task !== null && task.id != undefined) {
-            res = await fetch('http://127.0.0.1:8080/api/tasks',{
+            res = await fetch(this.todo_api_url,{
                 method: 'PUT',
                 body: JSON.stringify(task),
                 headers: {"Content-Type": "application/json"}
@@ -61,7 +65,7 @@ export default class Dashboard extends Component {
             }
         }
         else {
-            res = await fetch('http://127.0.0.1:8080/api/tasks',{
+            res = await fetch(this.todo_api_url,{
                 method: 'POST',
                 body: JSON.stringify(task),
                 headers: {"Content-Type": "application/json"}
@@ -77,7 +81,7 @@ export default class Dashboard extends Component {
     }
 
     async deleteTask(id) {
-        var res = await fetch('http://127.0.0.1:8080/api/tasks?id=' + id,{
+        var res = await fetch(this.todo_api_url + '?id=' + id,{
                 method: 'DELETE',
                 headers: {"Content-Type": "application/json"}
             });
@@ -91,7 +95,7 @@ export default class Dashboard extends Component {
     }
 
     async getTasks() {
-        const response = await fetch('http://127.0.0.1:8080/api/tasks');
+        const response = await fetch(this.todo_api_url);
         const body = await response.json();
         if (response.status !== 200) {
             throw Error(body.message) 
