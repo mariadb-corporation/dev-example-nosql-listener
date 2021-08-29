@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  client:
+    build: ./app/client
+    hostname: 'todo_client'
+    container_name: 'todo_client'
+    stdin_open: true
+    links:
+      - "api"
+    ports:
+      - 3000:3000
+  api:
+    build: ./app/api
+    hostname: 'todo_api'
+    container_name: 'todo_api'
+    links:
+      - "mxs1"
+    ports:
+      - 8080:8080
+  mdb1:
+    image: mariadb:latest
+    hostname: 'mdb'
+    container_name: 'mdb'
+    ports:
+      - 3307:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: 'Password123!'
+  mxs1:
+    image: mariadb/maxscale:6.1.1
+    hostname: 'mxs'
+    container_name: 'mxs'
+    links:
+      - "mdb1"
+    ports:
+      - 3308:3306
+      - 8989:8989
+      - 17017:17017
