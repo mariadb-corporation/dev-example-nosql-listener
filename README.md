@@ -95,7 +95,7 @@ For more information on the full capabilities see the documentation [here](https
     $ docker exec -it mxs bash
     ```
 
-    b. Copy and paste the configuration [configuration/maxscale.cnf) here to etc/maxscale.cnf.
+    b. Copy and paste the configuration [here](configuration/maxscale.cnf) to etc/maxscale.cnf.
 
     You can edit the file using vim.
 
