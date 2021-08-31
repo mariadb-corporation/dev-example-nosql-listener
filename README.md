@@ -107,7 +107,7 @@ For more information on the full capabilities see the documentation [here](https
 
      - Press `i` (to enable insert ability)
 
-     - Within insert mode replace all the contents of the maxscale.cnf file with [this](configuration.maxscale.cnf).
+     - Within insert mode replace all the contents of the maxscale.cnf file with [this](configuration/maxscale.cnf).
 
      - To save, press `escape`, then type `:wq` and, finally, press `Enter` to confirm.
 
@@ -162,7 +162,7 @@ MariaDB [(none)]> show databases;
 +--------------------+
 ```
 
-Stepping into the `todo` you can also see the new table, `tasks`, that has been created to store the document data.
+Stepping into the `todo` database you can also see the new table, `tasks`, that has been created to store the document data.
 
 ```bash
 MariaDB [(none)]> use todo;
@@ -268,7 +268,7 @@ After you've connected you can use the Query Editor to execute SQL queries, disp
 
 ### MongoDB Shell <a name="mongodb-shell"></a>
 
-You can also use the [Mongo Shell client](https://docs.mongodb.com/v4.4/mongo/) to connect to and communicate with MariaDB (via MaxScale). You can find more information on how to do so [here](https://github.com/mariadb-corporation/MaxScale/blob/develop/Documentation/Protocols/NoSQL.md#client-authentication).
+You can also use the [Mongo shell client](https://docs.mongodb.com/v4.4/mongo/) to connect to and communicate with MariaDB (via MaxScale). You can find more information on how to do so [here](https://github.com/mariadb-corporation/MaxScale/blob/develop/Documentation/Protocols/NoSQL.md#client-authentication).
 
 ## Using the TODO Application Directly <a name="todo-app"></a>
 
