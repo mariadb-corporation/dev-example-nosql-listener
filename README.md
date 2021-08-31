@@ -80,7 +80,7 @@ For more information on the full capabilities see the documentation [here](https
     b. Connecting to the MariaDB Community Server instance, contained within the mdb container, using the MariaDB command-line client on your machine to execute the script, add_maxscale_user.sql.
 
 	```bash
-	$ mariadb --host 127.0.0.1 --port 3307 --user root -pPassword123! < add_maxscale_user.sql
+	$ mariadb --host 127.0.0.1 --port 3307 --user root -pPassword123! < configuration/add_maxscale_user.sql
 	```
 
 4.  Replace the MaxScale configuration file and restart the MaxScale service
