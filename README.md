@@ -71,21 +71,17 @@ For more information on the full capabilities see the documentation [here](https
 
 3. Add a new MaxScale user to the MariaDB database.
 
-    a. Option 1 - Step into the `mdb` Docker container.
+     a. Connecting to the MariaDB Community Server instance, contained within the mdb container, and using the MariaDB command-line client contained within the container, via docker, to execute the script, add_maxscale_user.sql.
+	
+	```bash
+	$ docker exec -i mdb mariadb --user root -pPassword123! < configuration/add_maxscale_user.sql
+	```
 
-    1. ```bash 
-        $ docker exec -it mdb bash
-       ```
-    2. ```bash
-        $ mariadb --user root -pPassword123!
-        ```
-    3. Copy, paste and execute the scripts [here](configuration/add_maxscale_user.sql) using the MariaDB command line interface (CLI) client.
+    b. Connecting to the MariaDB Community Server instance, contained within the mdb container, using the MariaDB command-line client on your machine to execute the script, add_maxscale_user.sql.
 
-    b. Option 2 - Execute the [add_maxscale_user.sql](configuration/add_maxscale_user.sql) on the MariaDB Community Server instance contained with the `mdb` containernusing the MariaDB CLI client.
-
-    ```bash
-    $ mariadb --host 127.0.0.1 --port 3307 --user root -pPassword123! < configuration/add_maxscale_user.sql
-    ```
+	```bash
+	$ mariadb --host 127.0.0.1 --port 3307 --user root -pPassword123! < add_maxscale_user.sql
+    	```
 
 4.  Replace the MaxScale configuration file and restart the MaxScale service
 
