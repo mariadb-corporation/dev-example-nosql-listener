@@ -81,7 +81,7 @@ For more information on the full capabilities see the documentation [here](https
 
 	```bash
 	$ mariadb --host 127.0.0.1 --port 3307 --user root -pPassword123! < add_maxscale_user.sql
-    	```
+	```
 
 4.  Replace the MaxScale configuration file and restart the MaxScale service
 
@@ -118,6 +118,12 @@ After you've successfully walked through the setup instructions within [Getting 
 If you've used the TODO application to add new `tasks` you can now explore the schema and data that have been added.
 
 You can connect to the MariaDB Community Server instance, contained within the `mdb` container, directly by using the MariaDB client.
+
+```bash 
+$ mariadb --host 127.0.0.1 --port 3307 --user root -pPassword123!
+```
+
+or by using the MariaDB client, via Docker, that's included within the `mdb` container.
 
 ```bash 
 $ mariadb --host 127.0.0.1 --port 3307 --user root -pPassword123!
