@@ -69,7 +69,7 @@ For more information on the full capabilities see the documentation [here](https
 
     The result should show that the `mxs`, `mdb`, `todo_client` and `todo_api` are running.
 
-3. Add a new MaxScale user to the MariaDB database. You can add a new user, which MaxScale will use to connect to and communicate with MariaDB Community Server, with one of the following options.
+3. Add a new user that MaxScale can use to connect to and communicate with MariaDB Community Server. For this you have two options.
 
      a. Connecting to the MariaDB Community Server instance, contained within the mdb container, and using the MariaDB command-line client contained within the container, via docker, to execute the script, add_maxscale_user.sql.
 	
