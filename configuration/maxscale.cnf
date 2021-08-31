@@ -60,6 +60,13 @@ service=Read-Write-Service
 protocol=MariaDBClient
 port=4006
 
+# The NoSQL Listener 
+# 
+# Uses the new nosqlprotocol protocol
+# Listens on port 17017
+# Connects to MariaDB via the Read-Write-Service
+#
+
 [MongoDB-Listener]
 type=listener
 service=Read-Write-Service

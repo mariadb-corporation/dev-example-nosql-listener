@@ -87,35 +87,15 @@ For more information on the full capabilities see the documentation [here](https
     $ mariadb --host 127.0.0.1 --port 3307 --user root -pPassword123! < configuration/add_maxscale_user.sql
     ```
 
-4.  Configure and Restart MaxScale
+4.  Replace the MaxScale configuration file and restart the MaxScale service
 
-    a. Step into the container instance.
+    a. Replace the MaxScale the default configuration file with the [configuration file included in the dev-example-nosql-listener repository](configuration/maxscale.cnf).
 
-    ```bash
-    $ docker exec -it mxs bash
-    ```
+		$ docker cp configuration/maxscale.cnf mxs:etc/maxscale.cnf
 
-    b. Copy and paste the configuration [here](configuration/maxscale.cnf) to etc/maxscale.cnf.
+    b. Restart the MaxScale service within the mxs container.
 
-    You can edit the file using vim.
-
-    ```bash
-    $ vi etc/maxscale.cnf
-    ```
-
-    **VIM Edit Tips:**
-
-     - Press `i` (to enable insert ability)
-
-     - Within insert mode replace all the contents of the maxscale.cnf file with [this](configuration/maxscale.cnf).
-
-     - To save, press `escape`, then type `:wq` and, finally, press `Enter` to confirm.
-
-    c. Restart MaxScale
-
-    ```bash
-    $ maxscale-restart
-    ```
+		$ docker exec -it mxs maxscale-restart
 
 5. Open a browser window and navigate to `http://localhost:3000`, which will load the TODO web application interface.
 
