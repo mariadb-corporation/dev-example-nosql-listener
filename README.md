@@ -126,7 +126,7 @@ $ mariadb --host 127.0.0.1 --port 3307 --user root -pPassword123!
 or by using the MariaDB client, via Docker, that's included within the `mdb` container.
 
 ```bash 
-$ docker exec -i mdb mariadb --user root -pPassword123!
+$ docker exec -it mdb mariadb --user root -pPassword123!
 ```
 
 Once you've accessed through the MariaDB CLI client you see the database, named `todo`, that's been created.
