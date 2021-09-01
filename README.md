@@ -25,9 +25,9 @@ Before setting up this sample make sure you have the following installed on your
 
 ## NoSQL Protocol Module <a name="nosql-protocol"></a>
 
-The [nosqlprotocol module](https://github.com/mariadb-corporation/MaxScale/blob/develop/Documentation/Protocols/NoSQL.md) allows a MariaDB server or cluster to be used as the backend of an application using a [MongoDB® client library](https://docs.mongodb.com/drivers/node/current/). Internally, all documents are stored in a table containing two columns; an `id` column for the object id and a `doc` column for the document itself.
+The [nosqlprotocol module](https://github.com/mariadb-corporation/MaxScale/blob/develop/Documentation/Protocols/NoSQL.md) allows a MariaDB server or cluster to be used as the backend of an application using a MongoDB client library. Internally, all documents are stored in a table containing two columns; an `id` column for the object id and a `doc` column for the document itself.
 
-When the MongoDB® client application issues [MongoDB protocol commands](https://docs.mongodb.com/manual/reference/mongodb-wire-protocol/), either directly or indirectly via the client library, they are transparently converted into the equivalent SQL and executed against the MariaDB backend. The MariaDB responses are then in turn converted into the format expected by the MongoDB® client library and application.
+When the MongoDB® client application issues MongoDB protocol commands, either directly or indirectly via the client library, they are transparently converted into the equivalent SQL and executed against the MariaDB backend. The MariaDB responses are then in turn converted into the format expected by the MongoDB® client library and application.
 
 <p align="center" spacing="10">
     <kbd>
