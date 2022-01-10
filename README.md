@@ -1,5 +1,9 @@
 # Get Started with MariaDB's NoSQL Listener 
 
+⚠️ **[UNMAINTAINED]** This repository has been moved and is currently maintained [here](https://github.com/mariadb-developers/mariadb-nosql-listener-quickstart). ⚠️
+
+<br />
+
 This repository contains information on how to create and use a [MariaDB MaxScale](https://mariadb.com/products/enterprise/components/#maxscale) NoSQL Listener with [MariaDB Community Server](https://mariadb.com/products/community-server/).
 
 This `README` will walk you through the process of using a MongoDB driver to connect to and communicate with MariaDB, which includes storing and manage NoSQL document data within MariaDB.
